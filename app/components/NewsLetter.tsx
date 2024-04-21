@@ -75,7 +75,7 @@ export default function NewsLetter({ }: Props) {
               if (datas.status >= 400) {
                 setStatus(datas.status);
                 setMessage(
-                  "It seems you have already subscribed to our newsletter!!"
+                  "It seems you have already subscribed to our newsletter!"
                 );
                 setTimeout(() => {
                   setMessage("");
@@ -98,7 +98,7 @@ export default function NewsLetter({ }: Props) {
             } catch (error) {
               setStatus(500);
               setMessage(
-                "Error joining the newsletter. You can directly contact me at github@ebraj."
+                "Error joining the newsletter.."
               );
               setTimeout(() => {
                 setMessage("");
