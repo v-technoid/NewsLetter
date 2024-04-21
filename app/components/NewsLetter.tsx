@@ -9,7 +9,7 @@ const requiredSchema = Yup.object({
   email: Yup.string().email("Invalid email").required("Email is required"),
 });
 
-export default function NewsLetter({}: Props) {
+export default function NewsLetter({ }: Props) {
   const [status, setStatus] = useState<number | null>(null);
   const [message, setMessage] = useState<string>("");
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
@@ -47,9 +47,8 @@ export default function NewsLetter({}: Props) {
             Subscribe to Newsletter!
           </h1>
           <p className="text-gray-600">
-            Receive notifications of high-quality articles about frontend
-            development and other relevant topics delivered straight to your
-            inbox. You will receive a monthly email from me, ensuring a
+            Receive notifications of high-quality articles about Medical Health care and other relevant topics delivered straight to your
+            inbox. You will receive a monthly email from us, ensuring a
             spam-free experience.
           </p>
         </div>
@@ -76,7 +75,7 @@ export default function NewsLetter({}: Props) {
               if (datas.status >= 400) {
                 setStatus(datas.status);
                 setMessage(
-                  "Error joining the newsletter. You can directly contact me at github@ebraj."
+                  "It seems you have already subscribed to our newsletter!!"
                 );
                 setTimeout(() => {
                   setMessage("");
@@ -127,9 +126,8 @@ export default function NewsLetter({}: Props) {
             </div>
             {message && (
               <p
-                className={`${
-                  status !== 201 ? "text-red-500" : "text-green-500"
-                } pt-4 font-black `}
+                className={`${status !== 201 ? "text-red-500" : "text-green-500"
+                  } pt-4 font-black `}
               >
                 {message}
               </p>
